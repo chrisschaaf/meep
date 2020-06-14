@@ -15,7 +15,7 @@ const mapState = {
         fillColor:'hsl(125, 100%, 14%)',
         fillOpacity: "0.7",
         radius: 500,
-        strokeWeight: 1
+        strokeWeight: 10
     },
     center: {
         "lat": 39.0997,

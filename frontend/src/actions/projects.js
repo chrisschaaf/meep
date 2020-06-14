@@ -3,7 +3,8 @@ import uuid from 'uuid';
 // ADD_PROJECTS
 export const addProjects = (projects) => ({
   type: 'ADD_PROJECTS',
-  projects: projects.map(project => {
+  if(projects) {
+    projects: projects.map((project) => {
       return {
         key: uuid(),
         description: project.description,
@@ -13,7 +14,8 @@ export const addProjects = (projects) => ({
         name: project.name,
         img: project.photoUrl,
         url: project.websiteUrl,
-        year: project.year
-      }
-  })
+        year: project.year,
+      };
+    });
+  },
 });
