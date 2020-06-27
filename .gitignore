@@ -6,3 +6,4 @@ sample_data*
 schema.sql
 node_modules/
 frontend/public/bundle.js
+.vscode/

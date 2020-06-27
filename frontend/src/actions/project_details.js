@@ -1,15 +1,15 @@
 import uuid from 'uuid';
 
 // SELECT_PROJECT
-export const selectProject = (selected_project) => ({
+export const selectProject = (selectedProject) => ({
   type: 'SELECT_PROJECT',
   project: {
     key: uuid(),
-    date: selected_project.date,
-    img: selected_project.img,
-    details: selected_project.details,
-    name: selected_project.project_name,
-    type: selected_project.project_type,
-    emissions_data: selected_project.emissions_data
-  }
+    date: selectedProject.date,
+    img: selectedProject.img,
+    details: selectedProject.details,
+    name: selectedProject.project_name,
+    type: selectedProject.project_type,
+    emissions_data: selectedProject.emissions_data,
+  },
 });

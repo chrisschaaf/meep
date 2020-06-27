@@ -1,5 +1,6 @@
 import {GoogleMapsAPIKey} from '../../private/google_maps';
 import firebase from '../firebase';
+import axios from 'axios';
 
 const GEODATA_API = 'https://maps.googleapis.com/maps/api/geocode/json';
 
@@ -91,9 +92,13 @@ export class MeepService {
    */
   getGeoDataByZipCode(zipcode) {
     return new Promise((resolve, reject) => {
-      firebase.database().ref(`${GEODATA_API}?address=${zipcode}&key=${GoogleMapsAPIKey}`).once('value')
+      axios.get(`${GEODATA_API}?address=${zipcode}&key=${GoogleMapsAPIKey}`)
           .then((res) => {
-            resolve(res.data);
+            const locationData = (res.data.results.length && res.data.results[0].hasOwnProperty('geometry')) ?
+                  res.data.results[0].geometry.location :
+                  {};
+
+            resolve(locationData);
           })
           .catch((err) => {
             reject(err);

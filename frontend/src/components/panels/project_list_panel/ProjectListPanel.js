@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Header from '../../helpers/Header';
 import BackToLink from '../../helpers/BackToLink';
@@ -39,10 +40,10 @@ class ProjectListPanel extends React.Component {
     });
   }
   /**
-   * @param {any} project_id
+   * @param {any} projectID
    */
-  dispatchProjectSummary(project_id) {
-    meepService.getProjectDetailsById(project_id).then((data) => {
+  dispatchProjectSummary(projectID) {
+    meepService.getProjectDetailsById(projectID).then((data) => {
       this.props.dispatch(selectProject(data));
     });
   }
@@ -89,6 +90,14 @@ class ProjectListPanel extends React.Component {
     }
   }
 }
+
+ProjectListPanel.propTypes = {
+  dispatch: PropTypes.func,
+  projects: PropTypes.shape({
+    length: PropTypes.any,
+    map: PropTypes.func,
+  }),
+};
 
 const mapStateToProps = (state) => {
   return {

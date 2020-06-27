@@ -4,8 +4,8 @@ import ProjectFiltersPanel from './project_filters_panel/ProjectFiltersPanel';
 import ProjectDetailsPanel from './project_details_panel/ProjectDetailsPanel';
 
 export {
-    WelcomePanel,
-    ProjectListPanel,
-    ProjectFiltersPanel,
-    ProjectDetailsPanel
-}
+  WelcomePanel,
+  ProjectListPanel,
+  ProjectFiltersPanel,
+  ProjectDetailsPanel,
+};

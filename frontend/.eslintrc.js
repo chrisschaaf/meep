@@ -5,6 +5,7 @@ module.exports = {
     node: true,
   },
   extends: ['plugin:react/recommended', 'google'],
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -12,8 +13,10 @@ module.exports = {
     ecmaVersion: 11,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'babel'],
   rules: {
-    'max-len': ['error', {code: 120}],
+    'max-len': ['error', {code: 150}],
+    'no-invalid-this': 0,
+    'babel/no-invalid-this': 1,
   },
 };
